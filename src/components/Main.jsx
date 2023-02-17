@@ -19,8 +19,8 @@ export default function Main() {
             ...prevState,
             personalInfo: {
                 ...prevState.personalInfo,
-                [name] : value
-            }
+                [name] : value,
+            },
         }))
     }
     function handleChangeFile(e) {
@@ -34,8 +34,8 @@ export default function Main() {
                 ...prevState,
                 personalInfo: {
                     ...prevState.personalInfo,
-                    [name] : reader.result
-                }
+                    [name] : reader.result,
+                },
             }))
         }
         reader.readAsDataURL(file)
@@ -118,8 +118,6 @@ export default function Main() {
             return{...prevState, education : [...newEducation]}
         })
     }
-
-    console.log(cv)
 
     return (
         <div>

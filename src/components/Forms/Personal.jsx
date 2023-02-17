@@ -1,4 +1,5 @@
 import React from 'react';
+import FileInput from '../Utils/FileInput';
 
 export default function Personal({personalInfo, handleChange}){
     return (
