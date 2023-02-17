@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 export default function CVHeader({personalInfo}){
     const {firstName, lastName, title} = personalInfo;
 

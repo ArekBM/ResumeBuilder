@@ -1,4 +1,5 @@
 import avatar from '../../assets/pic.jpeg'
+import {v4 as uuidv4} from 'uuid';
 
 const emptyCV = {
     personalInfo: {
@@ -10,7 +11,17 @@ const emptyCV = {
         phone: '',
         email: '',
         description: ''
-    }
+    },
+    experience: [
+        {
+            id: uuidv4(),
+            position: '',
+            company: '',
+            city: '',
+            startDate: '',
+            endDate: '',
+        }
+    ]
 }
 
 export default emptyCV;
