@@ -21,6 +21,17 @@ const emptyCV = {
             startDate: '',
             endDate: '',
         }
+    ],
+    education: [
+        {
+            id: uuidv4(),
+            university: '',
+            city: '',
+            degree: '',
+            subject: '',
+            schoolStart: '',
+            schoolEnd: ''
+        }
     ]
 }
 

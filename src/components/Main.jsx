@@ -80,6 +80,47 @@ export default function Main() {
         })
     }
 
+    function handleChangeEducation(e, id){
+        const { name, value } = e.target
+        setCv((prevState) => {
+            const newEducation = prevState.education.map((educationItem) => {
+                if(educationItem.id === id){
+                    return {...educationItem, [name] : value}
+                }
+                return educationItem
+            })
+            return {...prevState, education : [...newEducation]}
+        })
+    }
+
+    function handleAddEducation(){
+        setCv((prevState) => ({
+            ...prevState,
+            education: [
+                ...prevState.education,
+                {
+                    id: uuidv4(),
+                    univeristy: '',
+                    degree: '',
+                    subject: '',
+                    schoolStart: '',
+                    schoolEnd: ''
+                }
+            ]
+        }))
+    }
+
+    function handleDeleteEducation(id){
+        setCv((prevState) => {
+            const newEducation = prevState.education.filter(
+                (educationItem) => educationItem.id !== id
+            )
+            return{...prevState, education : [...newEducation]}
+        })
+    }
+
+    console.log(cv)
+
     return (
         <div>
             <MainForm
@@ -88,6 +129,9 @@ export default function Main() {
                 onChangeExperience={handleChangeExperience}
                 onAddExperience={handleAddExperience}
                 onDeleteExperience={handleDeleteExperience}
+                onChangeEducation={handleChangeEducation}
+                onAddEducation={handleAddEducation}
+                onDeleteEducation={handleDeleteEducation}
             />
             <Preview cv={cv} />
         </div>
