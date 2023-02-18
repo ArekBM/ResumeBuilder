@@ -1,13 +1,20 @@
 import React from 'react';
+import styled from 'styled-components';
 
 
 export default function CVHeader({personalInfo}){
     const {firstName, lastName, title} = personalInfo;
 
     return(
-        <section>
+        <CVHeaderWrapper>
             <h1>{firstName} {lastName}</h1>
             <p>{title}</p>
-        </section>
+        </CVHeaderWrapper>
     )
 }
+
+const CVHeaderWrapper = styled.header`
+    grid-column: span 2;
+    padding: 2rem;
+
+`

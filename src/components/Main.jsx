@@ -3,6 +3,7 @@ import emptyCV from './Utils/emptyCV';
 import MainForm from './Forms/MainForm';
 import Preview from './Preview/Preview';
 import { v4 as uuidv4 } from 'uuid';
+import styled from 'styled-components';
 
 export default function Main() {
     const [cv, setCv] = React.useState(emptyCV)
@@ -120,7 +121,7 @@ export default function Main() {
     }
 
     return (
-        <div>
+        <MainWrapper>
             <MainForm
                 cv={cv}
                 onChangePersonal={handleChangePersonal}
@@ -132,6 +133,22 @@ export default function Main() {
                 onDeleteEducation={handleDeleteEducation}
             />
             <Preview cv={cv} />
-        </div>
+        </MainWrapper>
     )
 }
+
+const MainWrapper = styled.main`
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 4rem;
+    max-width: 1800px;
+    padding: 4rem 8rem;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+
+    @media (max-width: 1600px) {
+        flex-direction: column;
+        align-items: center;
+    }
+`

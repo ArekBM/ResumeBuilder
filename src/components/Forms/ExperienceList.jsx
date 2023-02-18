@@ -1,6 +1,7 @@
 import React from 'react';
 import ExperienceItem from './ExperienceItem';
-
+import Section from '../Utils/Section';
+import Button from '../Utils/Button';
 export default function Experience({ experience, onChange, onAdd, onDelete}){
     const experienceItems = experience.map((experienceItem) => (
         <ExperienceItem
@@ -13,9 +14,9 @@ export default function Experience({ experience, onChange, onAdd, onDelete}){
     ))
 
     return (
-        <section title='Experience'>
+        <Section title='Experience' titlePadding='0.5rem' direction='column'>
             {experienceItems}
-            <button onClick={onAdd}>Add</button>
-        </section>
+            <Button text='Add' onClick={onAdd}></Button>
+        </Section>
     )
 }

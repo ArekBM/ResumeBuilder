@@ -1,31 +1,37 @@
 import React from 'react';
 import FileInput from '../Utils/FileInput';
+import Section from '../Utils/Section';
+import Input from '../Utils/Input';
 
 export default function Personal({personalInfo, handleChange}){
     return (
-        <section>
-            <input
+        <Section
+            title='Personal Information'
+            titlePadding='0.5rem'
+            direction='column'
+        >
+            <Input
                 onChange={(e) => handleChange(e)}
                 type='text'
                 name='firstName'
                 placeholder='First name'
                 value={personalInfo.firstName}
             />
-            <input 
+            <Input 
                 onChange={(e) => handleChange(e)}
                 type='text'
                 name='lastName'
                 placeholder='Last name'
                 value={personalInfo.lastName}
             />
-            <input
+            <Input
                 onChange={(e) => handleChange(e)}
                 type='text'
                 name='title'
                 placeholder='Title'
                 value={personalInfo.title}
             />
-            <input 
+            <Input 
                 onChange={(e) => handleChange(e)}
                 type='text'
                 name='address'
@@ -38,14 +44,14 @@ export default function Personal({personalInfo, handleChange}){
                 label='Photo'
                 value={personalInfo.photo}
             />
-            <input 
+            <Input 
                 onChange={(e) => handleChange(e)}
                 type='text'
                 name='phone'
                 placeholder='Phone number'
                 value={personalInfo.phone}
             />
-            <input 
+            <Input 
                 onChange={(e) => handleChange(e)}
                 type='text'
                 name='email'
@@ -58,6 +64,6 @@ export default function Personal({personalInfo, handleChange}){
                 placeholder='Description'
                 value={personalInfo.description}
             />
-        </section>
+        </Section>
     )
 }

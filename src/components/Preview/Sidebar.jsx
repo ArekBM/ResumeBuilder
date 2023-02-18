@@ -1,15 +1,26 @@
 import React from 'react';
+import styled from 'styled-components';
+import Section from '../Utils/Section';
+import Subsection from '../Utils/Subsection';
 
 export default function Sidebar({personalInfo}) {
     return(
-        <section>
-            <img src={personalInfo.photo} />
-            <section>
-                <h4 name='Address'>{personalInfo.address}</h4>
-                <h4 name='Phone'>{personalInfo.phone}</h4>
-                <h4 name='Email'>{personalInfo.email}</h4>
-                <h4 name='Description'>{personalInfo.description}</h4>
-            </section>
-        </section>
+        <SidebarWrapper>
+            <Photo src={personalInfo.photo} />
+            <Section title='Personal Details' contrastTitle direction='column'>
+                <Subsection title='Address'>{personalInfo.address}</Subsection>
+                <Subsection title='Phone'>{personalInfo.phone}</Subsection>
+                <Subsection title='Email'>{personalInfo.email}</Subsection>
+            </Section>
+        </SidebarWrapper>
     )
 }
+
+const SidebarWrapper = styled.div`
+    padding: 2rem;
+    
+`
+
+const Photo = styled.img`
+margin-bottom: 2rem;
+`

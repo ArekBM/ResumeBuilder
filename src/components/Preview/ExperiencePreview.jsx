@@ -1,17 +1,35 @@
-import React from 'react'
+import React from 'react';
+import styled from 'styled-components';
+import Subsection from '../Utils/Subsection';
 
 export default function ExperienceItemPreview({experienceItem}){
     return(
-        <section>
-            <title>
-                {experienceItem.position}
-            </title>
-            <section>
-                <h2>{experienceItem.startDate} - {experienceItem.endDate}</h2>
-                <div>
-                    {experienceItem.company}, {experienceItem.city}
-                </div>
-            </section>
-        </section>
+        <ExperienceItemWrapper>
+            <Period>
+                {experienceItem.startDate} - {experienceItem.endDate}
+            </Period>
+            <Info>
+                <Subsection title={experienceItem.position}>
+                    <div>
+                        {experienceItem.company}, {experienceItem.city}
+                    </div>
+                </Subsection>
+            </Info>
+        </ExperienceItemWrapper>
     )
 }
+
+const ExperienceItemWrapper = styled.div`
+    display: flex;
+`
+
+const Period = styled.div`
+    width: 25%;
+    font-weight: bold;
+    margin-right: 2rem;
+`
+
+const Info = styled.div`
+    width: 70%;
+`
+

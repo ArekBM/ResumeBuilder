@@ -1,44 +1,47 @@
 import React from 'react';
+import Input from '../Utils/Input'
+import Section from '../Utils/Section'
+import Button from '../Utils/Button';
 
 export default function ExperienceItem({ id, experienceItem, onChange, onDelete}){
     return(
-        <section>
-            <input
+        <>
+            <Input
                 onChange={(e) => onChange(e, id)}
                 type='text'
                 name='position'
                 placeholder='Position'
                 value={experienceItem.position}
             />
-            <input
+            <Input
                 onChange={(e) => onChange(e, id)}
                 type='text'
                 name='company'
-                placeholdeer='Company'
+                placeholder='Company'
                 value={experienceItem.company}
             />
-            <input
+            <Input
                 onChange={(e) => onChange(e, id)}
                 type='text'
                 name='city'
                 placeholder='City'
                 value={experienceItem.city}
             />
-            <input
+            <Input
                 onChange={(e) => onChange(e, id)}
                 type='text'
                 name='startDate'
                 placeholder='Start date'
                 value={experienceItem.startDate}
             />
-            <input 
+            <Input 
                 onChange={(e) => onChange(e, id)}
                 type='text'
                 name='endDate'
                 placeholder='End Date'
                 value={experienceItem.endDate}
             />
-            <button onClick={() => onDelete(id)}>Delete</button>
-        </section>
+            <Button text='Delete' onClick={() => onDelete(id)}></Button>
+        </>
     )
 }

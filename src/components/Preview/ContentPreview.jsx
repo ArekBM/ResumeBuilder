@@ -1,6 +1,8 @@
 import React from 'react';
 import EducationItemPreview from './EducationPreview';
 import ExperienceItemPreview from './ExperiencePreview';
+import styled from 'styled-components';
+import Section from '../Utils/Section';
 
 
 export default function Content({ personalInfo, experience, education }){
@@ -13,16 +15,24 @@ export default function Content({ personalInfo, experience, education }){
     ))
 
     return(
-        <section title='content'>
-            <section title='Description'>
-                <div>{personalInfo.description}</div>
-            </section>
-            <section title='Experience'>
-                <div>{experienceItems}</div>
-            </section>
-            <section title='Education'>
-                <div>{educationItems}</div>
-            </section>
-        </section>
+        <ContentWrapper>
+            <Section title='Description'>
+                <Description>{personalInfo.description}</Description>
+            </Section>
+            <Section title='Experience' direction ='column' contrastTitle>
+                {experienceItems}
+            </Section>
+            <Section title='Education' direction='column' contrastTitle>
+                {educationItems}
+            </Section>
+        </ContentWrapper>
     )
 }
+
+const ContentWrapper = styled.div`
+    padding: 2rem;
+`
+
+const Description = styled.div`
+    font-style: italic;
+`
