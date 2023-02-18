@@ -1,5 +1,7 @@
 import React from 'react';
 import EducationItem from './EducationItem';
+import Section from '../Utils/Section';
+import Button from '../Utils/Button';
 
 export default function Education({education, onChange, onAdd, onDelete }){
     const educationItems = education.map((educationItem) => (
@@ -12,9 +14,9 @@ export default function Education({education, onChange, onAdd, onDelete }){
         />
     ))
     return(
-        <section title='Education'>
+        <Section title='Education' titlePadding='0.5rem' direction='column'>
             {educationItems}
-            <button onClick={onAdd}>Add</button>
-        </section>
+            <Button text='Add' onClick={onAdd}></Button>
+        </Section>
     )
 }

@@ -18,6 +18,7 @@ export default function Sidebar({personalInfo}) {
 
 const SidebarWrapper = styled.div`
     padding: 2rem;
+    background-color: #2D95C0;
     
 `
 

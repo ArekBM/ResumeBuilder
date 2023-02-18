@@ -1,51 +1,53 @@
 import React from 'react';
+import Input from '../Utils/Input';
+import Button from '../Utils/Button';
 
 export default function EducationItem({id, educationItem, onChange, onDelete}){
     return(
-        <section>
-            <input
+        <>
+            <Input
                 onChange={((e) => onChange(e, id))}
                 type='text'
                 name='university'
-                placeholder='University Name'
+                placeholder='University'
                 value={educationItem.university}
             />
-            <input 
+            <Input 
                 onChange={((e) => onChange(e, id))}
                 type='text'
                 name='city'
                 placeholder='City'
                 value={educationItem.city}
             />
-            <input
+            <Input
                 onChange={((e) => onChange(e, id))}
                 type='text'
                 name='degree'
                 placeholder='Degree'
                 value={educationItem.degree}
             />
-            <input
+            <Input
                 onChange={((e) => onChange(e, id))}
                 type='text'
                 name='subject'
                 placeholder='Subject'
                 value={educationItem.subject}
             />
-            <input
+            <Input
                 onChange={((e) => onChange(e,id))}
                 type='text'
                 name='schoolStart'
                 placeholder='School start date'
                 value={educationItem.schoolStart}
             />
-            <input
+            <Input
                 onChange={((e) => onChange(e, id))}
                 type='text'
                 name='schoolEnd'
                 placeholder='School end date'
                 value={educationItem.schoolEnd}
             />
-            <button onClick={() => onDelete(id)}>Delete</button>
-        </section>
+            <Button text='Delete' onClick={() => onDelete(id)}></Button>
+        </>
     )
 }

@@ -18,4 +18,4 @@ const SubsectionWrapper = styled.section`
 const Title = styled.h4`
     padding: ${(props) => props.padding};
     line-height: 1.6;
-`
+`;

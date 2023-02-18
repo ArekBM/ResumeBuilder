@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useRef} from 'react';
 import emptyCV from './Utils/emptyCV';
 import MainForm from './Forms/MainForm';
 import Preview from './Preview/Preview';
@@ -120,6 +120,8 @@ export default function Main() {
         })
     }
 
+    const componentRef = useRef()
+
     return (
         <MainWrapper>
             <MainForm
@@ -132,7 +134,7 @@ export default function Main() {
                 onAddEducation={handleAddEducation}
                 onDeleteEducation={handleDeleteEducation}
             />
-            <Preview cv={cv} />
+            <Preview cv={cv} ref={componentRef} />
         </MainWrapper>
     )
 }

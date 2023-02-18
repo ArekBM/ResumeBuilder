@@ -29,6 +29,7 @@ const SectionWrapper = styled.section`
 
 const Title = styled.h3`
     padding: ${(props) => props.padding};
+    
 
 `
 

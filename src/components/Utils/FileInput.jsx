@@ -14,7 +14,7 @@ const FileInputWrapper = styled.input`
 display: none;
 `;
 
-const Label = styled.input`
+const Label = styled.label`
     padding: 0.5rem;
     border-radius: 5px;
     border: 1px solid transparent;
