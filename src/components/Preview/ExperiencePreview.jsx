@@ -24,7 +24,7 @@ const ExperienceItemWrapper = styled.div`
 `
 
 const Period = styled.div`
-    width: 25%;
+    width: 50%;
     font-weight: bold;
     margin-right: 2rem;
 `

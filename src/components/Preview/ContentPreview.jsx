@@ -31,6 +31,7 @@ export default function Content({ personalInfo, experience, education }){
 
 const ContentWrapper = styled.div`
     padding: 2rem;
+    background-color: #eee;
 `
 
 const Description = styled.div`

@@ -29,8 +29,10 @@ const SectionWrapper = styled.section`
 
 const Title = styled.h3`
     padding: ${(props) => props.padding};
+    color: #143E72;
+    border-bottom: 1px solid #ccc;
+    color: #143E72;
     
-
 `
 
 const Children = styled.div`

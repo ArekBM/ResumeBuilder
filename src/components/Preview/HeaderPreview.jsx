@@ -16,6 +16,7 @@ export default function CVHeader({personalInfo}){
 const CVHeaderWrapper = styled.header`
     grid-column: span 2;
     padding: 2rem;
-    background-color: #237597;
+    background-color: #143E72;
+    color: #eee;
 
 `

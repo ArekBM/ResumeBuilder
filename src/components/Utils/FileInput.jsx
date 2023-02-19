@@ -19,4 +19,8 @@ const Label = styled.label`
     border-radius: 5px;
     border: 1px solid transparent;
     background-color: #fff;
+
+    &:active {
+        border: 1px solid #aaa
+    }
 `;
