@@ -21,6 +21,6 @@ const Label = styled.label`
     background-color: #fff;
 
     &:active {
-        border: 1px solid #aaa
+        border: 1px solid #aaa;
     }
 `;

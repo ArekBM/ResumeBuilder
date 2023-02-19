@@ -4,6 +4,7 @@ import MainForm from './Forms/MainForm';
 import Preview from './Preview/Preview';
 import { v4 as uuidv4 } from 'uuid';
 import styled from 'styled-components';
+import {useReactToPrint} from 'react-to-print';
 
 export default function Main() {
     const [cv, setCv] = React.useState(emptyCV)
@@ -120,7 +121,13 @@ export default function Main() {
         })
     }
 
+    function handleReset(){
+        setCv(emptyCV)
+    }
+
     const componentRef = useRef()
+
+    const handlePrint = useReactToPrint({content: () => componentRef.current })
 
     return (
         <MainWrapper>
@@ -133,6 +140,8 @@ export default function Main() {
                 onChangeEducation={handleChangeEducation}
                 onAddEducation={handleAddEducation}
                 onDeleteEducation={handleDeleteEducation}
+                onPrint={handlePrint}
+                onReset={handleReset}
             />
             <Preview cv={cv} ref={componentRef} />
         </MainWrapper>
@@ -148,9 +157,10 @@ const MainWrapper = styled.main`
     padding: 4rem 8rem;
     margin: 0 auto;
     margin-bottom: 4rem;
+    background-color: #ccc;
 
     @media (max-width: 1600px) {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
     }
 `

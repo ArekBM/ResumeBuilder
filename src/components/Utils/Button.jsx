@@ -27,11 +27,13 @@ const ButtonWrapper = styled.button`
     background-color: #333;
     color: #eee;
 
-    &: hover {
+    &:hover {
         background-color: #222;
     }
 
-    &: active {
+    &:active {
         background-color: #111;
     }
+
+
 `

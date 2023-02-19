@@ -42,7 +42,7 @@ export default function Personal({personalInfo, handleChange}){
             <FileInput
                 onChange={(e) => handleChange(e)}
                 name='photo'
-                label='photo'
+                label='Photo'
                 value={personalInfo.photo}
             />
             <Input 
