@@ -32,6 +32,6 @@ const CVPreviewWrapper = styled.div`
     display: grid;
     grid-template-columns: 150mm 60mm;
     grid-template-rows: 35mm 262mm;
-    box-shadow: rgba(0,0,0, 0.35) 0px 5px 15px
+    box-shadow: rgba(0,0,0, 0.35) 0px 5px 15px;
 
 `

@@ -18,5 +18,9 @@ const CVHeaderWrapper = styled.header`
     padding: 2rem;
     background-color: #143E72;
     color: #eee;
-
 `
+// #517a69
+// #9d94ba
+// #055b87
+
+
