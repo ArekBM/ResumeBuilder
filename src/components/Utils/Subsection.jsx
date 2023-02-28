@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export default function Subsection({title, children, titlePadding}){
+export default function Subsection({title, children, titlePadding, icon }){
     return(
         <SubsectionWrapper padding={titlePadding}>
-            <Title>{title}</Title>
+            <Title>{icon} {title}</Title>
             {children}
         </SubsectionWrapper>
     )

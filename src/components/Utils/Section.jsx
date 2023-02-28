@@ -8,11 +8,12 @@ export default function Section({
     titlePadding,
     contrastTitle,
     direction,
+    icon,
 }) {
     return(
         <SectionWrapper padding={padding}>
             <Title padding={titlePadding} contrast={contrastTitle}>
-                {title}
+                {icon} {title}
             </Title>
             <Children direction={direction}>{children}</Children>
         </SectionWrapper>

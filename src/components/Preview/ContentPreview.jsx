@@ -3,7 +3,8 @@ import EducationItemPreview from './EducationPreview';
 import ExperienceItemPreview from './ExperiencePreview';
 import styled from 'styled-components';
 import Section from '../Utils/Section';
-
+import { FaUniversity } from 'react-icons/fa';
+import { BsFillPersonLinesFill, BsFillPersonBadgeFill } from 'react-icons/bs';
 
 export default function Content({ personalInfo, experience, education }){
     const experienceItems = experience.map(experienceItem => (
@@ -16,13 +17,13 @@ export default function Content({ personalInfo, experience, education }){
 
     return(
         <ContentWrapper>
-            <Section title='Description'>
+            <Section title='Description' icon={ <BsFillPersonLinesFill /> }>
                 <Description>{personalInfo.description}</Description>
             </Section>
-            <Section title='Experience' direction ='column' contrastTitle>
+            <Section title='Experience' direction ='column' icon={ <BsFillPersonBadgeFill /> } contrastTitle>
                 {experienceItems}
             </Section>
-            <Section title='Education' direction='column' contrastTitle>
+            <Section title='Education' direction='column' icon={ <FaUniversity /> } contrastTitle>
                 {educationItems}
             </Section>
         </ContentWrapper>
