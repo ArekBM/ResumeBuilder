@@ -20,6 +20,7 @@ const emptyCV = {
             city: '',
             startDate: '',
             endDate: '',
+            workDescription: '',
         }
     ],
     education: [

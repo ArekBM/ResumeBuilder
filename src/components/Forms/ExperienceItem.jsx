@@ -2,6 +2,7 @@ import React from 'react';
 import Input from '../Utils/Input'
 import Section from '../Utils/Section'
 import Button from '../Utils/Button';
+import TextArea from '../Utils/TextArea';
 
 export default function ExperienceItem({ id, experienceItem, onChange, onDelete}){
     return(
@@ -41,6 +42,13 @@ export default function ExperienceItem({ id, experienceItem, onChange, onDelete}
                 placeholder='End Date'
                 value={experienceItem.endDate}
             />
+            <TextArea
+                onChange={(e) => onChange(e, id)}
+                name='workDescription'
+                placeholder='Description'
+                value={experienceItem.workExperience}
+            />
+                
             <Button text='Delete' onClick={() => onDelete(id)}></Button>
         </>
     )

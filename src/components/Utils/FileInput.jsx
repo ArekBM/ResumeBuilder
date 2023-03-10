@@ -11,7 +11,7 @@ export default function FileInput({label, name, onChange}){
 }
 
 const FileInputWrapper = styled.input`
-display: none;
+    display: none;
 `;
 
 const Label = styled.label`

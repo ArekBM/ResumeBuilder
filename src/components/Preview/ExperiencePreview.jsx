@@ -13,6 +13,9 @@ export default function ExperienceItemPreview({experienceItem}){
                     <div>
                         {experienceItem.company}, {experienceItem.city}
                     </div>
+                    <div>
+                        {experienceItem.workDescription}
+                    </div>
                 </Subsection>
             </Info>
         </ExperienceItemWrapper>
