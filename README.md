@@ -1,9 +1,10 @@
 <h1>ResumeBuilder</h1>
 ResumeBuilder is a web-based application that helps users create professional-looking resumes quickly and easily. It is built using React and vanilla JavaScript, and includes several useful libraries such as react-icons, react-to-print, uuid, and styled-components.
 
+<br />
 <b>Installation</b>
 <br />
-To use ResumeBuilder, simply clone this repository to your local machine and run npm install to install the required dependencies. Then, run npm start to launch the application in your web browser.
+To use ResumeBuilder, simply clone this repository to your local machine and 'run npm install' to install the required dependencies. Then, 'run npm start' to launch the application in your web browser.
 
 <b>Usage</b>
 <br />
