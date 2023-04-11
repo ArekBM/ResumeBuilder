@@ -10,7 +10,11 @@ const emptyCV = {
         photo: avatar,
         phone: '',
         email: '',
-        description: ''
+        github: '',
+        linkedin: '',
+        languages: '',
+        technologies: '',
+        description: '',
     },
     experience: [
         {
@@ -32,6 +36,13 @@ const emptyCV = {
             subject: '',
             schoolStart: '',
             schoolEnd: ''
+        }
+    ],
+    projects: [
+        {
+            id: uuidv4(),
+            title: '',
+            projectDescription: ''
         }
     ]
 }

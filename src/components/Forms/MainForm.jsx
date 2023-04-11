@@ -2,6 +2,7 @@ import React from 'react';
 import Education from './EducationList';
 import Experience from './ExperienceList';
 import Personal from './Personal';
+import Projects from './ProjectList';
 import styled from 'styled-components';
 import Button from '../Utils/Button';
 
@@ -15,6 +16,9 @@ export default function CVForm ({
     onChangeEducation, 
     onAddEducation,
     onDeleteEducation,
+    onChangeProjects,
+    onAddProject,
+    onDeleteProject,
     onPrint,
     onReset,
 }) {
@@ -32,6 +36,12 @@ export default function CVForm ({
                 onChange={onChangeEducation}
                 onAdd={onAddEducation}
                 onDelete={onDeleteEducation}
+            />
+            <Projects 
+                projects={cv.projects}
+                onChange={onChangeProjects}
+                onAdd={onAddProject}
+                onDelete={onDeleteProject}
             />
             <Button text='Generate PDF' onClick={onPrint} primary></Button>
             <Button text='Reset' onClick={onReset}></Button>

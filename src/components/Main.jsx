@@ -121,6 +121,43 @@ export default function Main() {
         })
     }
 
+    function handleChangeProjects(e, id){
+        const { name, value } = e.target
+        setCv((prevState) => {
+            const newProject = prevState.projects.map((projectItem) => {
+                if(projectItem.id === id){
+                    return { ...projectItem, [name] : value }
+                }
+                return projectItem
+            })
+            return {...prevState, projects: [...newProject]}
+
+        })
+    }
+
+    function handleDeleteProject(id){
+        setCv((prevState) => {
+            const newProject = prevState.projects.filter(
+                (projectItem) => projectItem.id !== id
+            )
+            return{...prevState, projects : [...newProject]}
+        })
+    }
+
+    function handleAddProject(){
+        setCv((prevState) => ({
+            ...prevState,
+            projects: [
+                ...prevState.projects,
+                {
+                    id: uuidv4(),
+                    title: '',
+                    projectDescription: ''
+                }
+            ]
+        }))
+    }
+
     function handleReset(){
         setCv(emptyCV)
     }
@@ -128,7 +165,7 @@ export default function Main() {
     const componentRef = useRef()
 
     const handlePrint = useReactToPrint({content: () => componentRef.current })
-
+    
     return (
         <MainWrapper>
             <MainForm
@@ -140,6 +177,9 @@ export default function Main() {
                 onChangeEducation={handleChangeEducation}
                 onAddEducation={handleAddEducation}
                 onDeleteEducation={handleDeleteEducation}
+                onChangeProjects={handleChangeProjects}
+                onAddProject={handleAddProject}
+                onDeleteProject={handleDeleteProject}
                 onPrint={handlePrint}
                 onReset={handleReset}
             />

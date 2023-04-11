@@ -15,6 +15,7 @@ class CVPreview extends Component {
                     personalInfo={cv.personalInfo}
                     experience={cv.experience}
                     education={cv.education}
+                    projects={cv.projects}
                 />
                 <Sidebar personalInfo={cv.personalInfo} />
             </CVPreviewWrapper>

@@ -36,7 +36,7 @@ export default function Personal({personalInfo, handleChange}){
                 onChange={(e) => handleChange(e)}
                 type='text'
                 name='address'
-                placeholder='Address'
+                placeholder='Location'
                 value={personalInfo.address}
             />
             <FileInput
@@ -58,6 +58,32 @@ export default function Personal({personalInfo, handleChange}){
                 name='email'
                 placeholder='Email'
                 value={personalInfo.email}
+            />
+            <Input 
+                onChange={(e) => handleChange(e)}
+                type='text'
+                name='github'
+                placeholder='Github'
+                value={personalInfo.github}
+            /> 
+            <Input 
+                onChange={(e) => handleChange(e)}
+                type='text'
+                name='linkedin'
+                placeholder='Linkedin'
+                value={personalInfo.linkedin}
+            />
+            <Input
+                onChange={(e) => handleChange(e)}
+                name='languages'
+                placeholder='Languages'
+                value={personalInfo.languages}
+            />
+            <Input
+                onChange={(e) => handleChange(e)}
+                name='technologies'
+                placeholder='Technologies'
+                value={personalInfo.technologies}
             />
             <TextArea
                 onChange={(e) => handleChange(e)}

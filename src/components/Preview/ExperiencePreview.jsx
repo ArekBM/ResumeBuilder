@@ -13,9 +13,9 @@ export default function ExperienceItemPreview({experienceItem}){
                     <div>
                         {experienceItem.company}, {experienceItem.city}
                     </div>
-                    <div>
+                    <Experience>
                         {experienceItem.workDescription}
-                    </div>
+                    </Experience>
                 </Subsection>
             </Info>
         </ExperienceItemWrapper>
@@ -34,5 +34,9 @@ const Period = styled.div`
 
 const Info = styled.div`
     width: 70%;
+`
+
+const Experience = styled.div`
+    border-top: 1px solid #ccc;
 `
 
