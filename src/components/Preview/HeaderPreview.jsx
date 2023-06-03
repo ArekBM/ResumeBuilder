@@ -5,12 +5,20 @@ import styled from 'styled-components';
 export default function CVHeader({personalInfo}){
     const {firstName, lastName, title} = personalInfo;
 
+    const getHeight = () => {
+        return this.headerRef.current.clientHeight
+    }
+
     return(
-        <CVHeaderWrapper>
+        <CVHeaderWrapper ref={this.headerRef}>
             <h1>{firstName} {lastName}</h1>
             <p>{title}</p>
         </CVHeaderWrapper>
     )
+}
+
+export function getHeight() {
+    return getHeight()
 }
 
 const CVHeaderWrapper = styled.header`
@@ -22,5 +30,3 @@ const CVHeaderWrapper = styled.header`
 // #517a69
 // #9d94ba
 // #055b87
-
-
