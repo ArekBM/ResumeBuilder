@@ -5,19 +5,35 @@ import Content from './ContentPreview'
 import styled from 'styled-components'
 
 class CVPreview extends Component {
+    state = {
+        viewHeight: 0
+    }
+
+    getTotalHeight = () => {
+        const headerHeight = this.headerRef.current.clientHeight
+        const sidebarHeight = this.sidebarRef.current.clientHeight
+        const contentHeight = this.contentRef.current.clientHeight
+        return headerHeight + sidebarHeight + contentHeight
+    }
+
+    componentDidMount() {
+        const totalHeight = this.getTotalHeight()
+        this.setState({viewHeight: totalHeight})
+    }
+
     render(){
         const { cv } = this.props;
 
         return (
-            <CVPreviewWrapper>
-                <HeaderPreview personalInfo={cv.personalInfo} />
-                <Content
+            <CVPreviewWrapper style={{height: this.state.viewHeight}}>
+                <HeaderPreview ref={this.headerRef} personalInfo={cv.personalInfo} />
+                <Content ref={this.contentRef}
                     personalInfo={cv.personalInfo}
                     experience={cv.experience}
                     education={cv.education}
                     projects={cv.projects}
                 />
-                <Sidebar personalInfo={cv.personalInfo} />
+                <Sidebar ref={this.sidebarRef} personalInfo={cv.personalInfo} />
             </CVPreviewWrapper>
         )
     }
@@ -27,7 +43,6 @@ export default CVPreview;
 
 const CVPreviewWrapper = styled.div`
     width: 210mm;
-    height: 280mm;
     position: relative;
     top: 10px;
     display: grid;
