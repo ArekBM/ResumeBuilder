@@ -12,6 +12,10 @@ const contentRef = useRef(null);
 export default function Content({ personalInfo, experience, education, projects }){
 
 useEffect(() => {
+  contentRef.current.style.height = `${contentRef.current.scrollHeight}px`;  
+}, [experience, education, projects]);
+
+useEffect(() => {
   contentRef.current.style.height = `${contentRef.current.scrollHeight}px`;
 }, [experience, education, projects]);
 
