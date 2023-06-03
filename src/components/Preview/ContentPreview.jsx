@@ -8,34 +8,40 @@ import { FaUniversity } from 'react-icons/fa';
 import { BsFillPersonLinesFill, BsFillPersonBadgeFill } from 'react-icons/bs';
 
 export default function Content({ personalInfo, experience, education, projects }){
-    const experienceItems = experience.map(experienceItem => (
-        <ExperienceItemPreview key={experienceItem.id} experienceItem={experienceItem} />
-    ))
-    
-    const educationItems = education.map(educationItem => (
-        <EducationItemPreview key={educationItem.id} educationItem={educationItem} />
-    ))
 
-    const projectItems = projects.map(projectItem => (
-        <ProjectItemPreview key={projectItem.id} projectItem={projectItem} />
-    ))
+    const getSectionHeight = (section) => {
+        return section.current.clientHeight
+    }
+
+    const getTotalHeight = () => {
+        let totalHeight = 0
+        totalHeight += getSectionHeight(this.descriptionSection)
+        totalHeight += getSectionHeight(this.experienceSection)
+        totalHeight += getSectionHeight(this.educationSection)
+        totalHeight += getSectionHeight(this.projectSection)
+        return totalHeight
+    }
 
     return(
         <ContentWrapper>
-            <Section title='Description' icon={ <BsFillPersonLinesFill /> }>
+            <Section ref={this.descriptionSection} title='Description' icon={ <BsFillPersonLinesFill /> }>
                 <Description>{personalInfo.description}</Description>
             </Section>
-            <Section title='Experience' direction ='column' icon={ <BsFillPersonBadgeFill /> } contrastTitle>
+            <Section ref={this.experienceSection} title='Experience' direction ='column' icon={ <BsFillPersonBadgeFill /> } contrastTitle>
                 {experienceItems}
             </Section>
             {/* <Section title='Education' direction='column' icon={ <FaUniversity /> } contrastTitle>
                 {educationItems}
             </Section> */}
-            <Section title='Personal Projects' direction='column' contrastTitle>
+            <Section ref={this.projectSection} title='Personal Projects' direction='column' contrastTitle>
                 {projectItems}
             </Section>
         </ContentWrapper>
     )
+}
+
+export function getHeight() {
+    return getTotalHeight()
 }
 
 const ContentWrapper = styled.div`
