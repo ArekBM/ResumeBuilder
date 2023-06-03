@@ -193,13 +193,13 @@ const MainWrapper = styled.main`
     align-items: flex-start;
     justify-content: space-between;
     gap: 4rem;
-    max-width: 1800px;
+    max-width: 2000px;
     padding: 4rem 8rem;
     margin: 0 auto;
     margin-bottom: 4rem;
     background-color: #ccc;
 
-    @media (max-width: 1600px) {
+    @media (max-width: 2000px) {
         flex-direction: row;
         align-items: center;
     }
