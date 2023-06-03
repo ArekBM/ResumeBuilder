@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import EducationItemPreview from './EducationPreview';
 import ExperienceItemPreview from './ExperiencePreview';
 import ProjectItemPreview from './ProjectPreview';
@@ -7,7 +7,14 @@ import Section from '../Utils/Section';
 import { FaUniversity } from 'react-icons/fa';
 import { BsFillPersonLinesFill, BsFillPersonBadgeFill } from 'react-icons/bs';
 
+const contentRef = useRef(null);
+
 export default function Content({ personalInfo, experience, education, projects }){
+
+useEffect(() => {
+  contentRef.current.style.height = `${contentRef.current.scrollHeight}px`;
+}, [experience, education, projects]);
+
     const experienceItems = experience.map(experienceItem => (
         <ExperienceItemPreview key={experienceItem.id} experienceItem={experienceItem} />
     ))
@@ -21,7 +28,7 @@ export default function Content({ personalInfo, experience, education, projects 
     ))
 
     return(
-        <ContentWrapper>
+        <ContentWrapper ref={contentRef}>
             <Section title='Description' icon={ <BsFillPersonLinesFill /> }>
                 <Description>{personalInfo.description}</Description>
             </Section>
