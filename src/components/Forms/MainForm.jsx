@@ -47,12 +47,11 @@ export default function CVForm ({
             <Button text='Reset' onClick={onReset}></Button>
         </CVFormWrapper>
     )
-} 
+}  
 
 const CVFormWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     width: 210mm;
     padding: 2rem;
     border-radius: 5px;
