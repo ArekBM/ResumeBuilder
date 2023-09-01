@@ -73,6 +73,13 @@ export default function Personal({personalInfo, handleChange}){
                 placeholder='Linkedin'
                 value={personalInfo.linkedin}
             />
+            <Input 
+                onChange={(e) => handleChange(e)}
+                type='text'
+                name='website'
+                placeholder='website'
+                value={personalInfo.website}
+            />
             <Input
                 onChange={(e) => handleChange(e)}
                 name='languages'
