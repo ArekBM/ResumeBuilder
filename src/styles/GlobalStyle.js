@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     font-family: "Nunito", sans-serif;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
 
   }
   header {
