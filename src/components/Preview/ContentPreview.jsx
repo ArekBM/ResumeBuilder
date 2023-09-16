@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import Section from '../Utils/Section';
 import { FaUniversity } from 'react-icons/fa';
 import { BsFillPersonLinesFill, BsFillPersonBadgeFill } from 'react-icons/bs';
-import { MdOutlineWeb } from 'react-icons/bs'
+import { MdOutlineWeb } from 'react-icons/md'
 
 export default function Content({ personalInfo, experience, education, projects }){
     const experienceItems = experience.map(experienceItem => (

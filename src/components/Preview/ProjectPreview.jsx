@@ -7,6 +7,7 @@ export default function ProjectItemPreview({ projectItem }){
         <ProjectItemWrapper>
             <Title>
                 <Subsection title={projectItem.title} >
+                    <a>Demo</a>
                 </Subsection>
             </Title>
             <Info>
