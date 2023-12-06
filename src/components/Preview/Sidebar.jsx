@@ -5,6 +5,7 @@ import Subsection from '../Utils/Subsection';
 import { VscAccount } from 'react-icons/vsc';
 import { AiFillHome, AiFillPhone, AiFillMail } from 'react-icons/ai';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { CgWebsite } from 'react-icons/cg'
 
 
 export default function Sidebar({personalInfo}) {
@@ -17,6 +18,7 @@ export default function Sidebar({personalInfo}) {
                 <Subsection icon={ <AiFillMail /> } title='Email'>{personalInfo.email}</Subsection>
                 <Subsection icon={ <FaGithub /> } title='Github'>{personalInfo.github}</Subsection>
                 <Subsection icon={ <FaLinkedin /> } title='Linkedin'>{personalInfo.linkedin}</Subsection>
+                <Subsection icon={ <CgWebsite /> } title='Website'>{personalInfo.website}</Subsection>
             </Section>
             <Section title='Skills' contrastTitle direction='column'>
                 <Subsection title='Languages:'>{personalInfo.languages}</Subsection>

@@ -12,6 +12,7 @@ const emptyCV = {
         email: '',
         github: '',
         linkedin: '',
+        website: '',
         languages: '',
         technologies: '',
         description: '',
