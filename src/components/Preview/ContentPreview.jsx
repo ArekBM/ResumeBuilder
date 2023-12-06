@@ -23,9 +23,9 @@ export default function Content({ personalInfo, experience, education, projects 
 
     return(
         <ContentWrapper>
-            {/* <Section title='Description' icon={ <BsFillPersonLinesFill /> }>
+            <Section title='Description' icon={ <BsFillPersonLinesFill /> }>
                 <Description>{personalInfo.description}</Description>
-            </Section> */}
+            </Section>
             <Section title='Education' direction='column' icon={ <FaUniversity /> } contrastTitle>
                 {educationItems}
             </Section>

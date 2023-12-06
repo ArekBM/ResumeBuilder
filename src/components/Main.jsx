@@ -199,8 +199,8 @@ const MainWrapper = styled.main`
     margin-bottom: 4rem;
     background-color: #ccc;
 
-    @media (max-width: 1600px) {
-        flex-direction: row;
-        align-items: center;
-    }
+    // @media (max-width: 1600px) {
+    //     flex-direction: row;
+    //     align-items: center;
+    // }
 `
